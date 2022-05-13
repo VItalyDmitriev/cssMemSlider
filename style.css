@@ -240,8 +240,10 @@ h6 {
 #slider {
     margin: 0 auto;
     width: 800px;
-    max-width: 100%;
     text-align: center;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 #slider input[type=radio] {
@@ -255,7 +257,7 @@ h6 {
 
 #slides {
     padding: 10px;
-    border: 3px solid #ccc;
+    border: 3px solid green;
     background: #fff;
     position: relative;
     z-index: 1;
@@ -399,9 +401,31 @@ h6 {
     background: #444;
 }
 
-@media screen and (max-width: 900px) {
-    #slides {
-        max-width: calc(100% - 140px);
-        margin: 0 auto;
+@media (max-width: 767px){
+    .slider-buttons {
+        justify-content: center;
+        order: unset;
+        width: 100%;
+    }
+
+    #controls {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .slider-text div {
+        text-align: center;
+    }
+
+    .slider-text {
+        width: 100%;
+    }
+
+    #slides .inner {
+        height: calc((100vw - 40px) * 9 / 16);
+    }
+
+    #slider {
+        width: 100%;
     }
 }
